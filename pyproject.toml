@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyosPackage"
+dynamic = ["version"]
+# version = "0.1.0" # uncomment this and comment the line above if you want to manually update versions
+description = "A package that adds values together"
+authors = [{ name = "Leah Wasser", email = "test@pyopensci.org" }]
+maintainers = [{ name = "pyopensci community", email = "test@pyopensci.org" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",  # BE sure to specify that you use python 3.x
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = ["pandas"] # Add your deps here
+requires-python = ">=3.9" # important for pip to specify the minimum version of Python
+readme = "README.md" # This will link to your readme file which is used populate your PyPI landing page
+license = { text = "BSD-3" }
+
+[project.urls] # Optional
+"Homepage" = "https://www.pyopensci.org"
+"Bug Reports" = "https://github.com/pyopensci/pyosPackage/issues"
+"Source" = "https://github.com/pyopensci/pyosPackage/issues"
+#"Funding" = "" # optional
