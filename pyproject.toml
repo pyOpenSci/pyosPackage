@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pyosPackage"
-dynamic = ["version"]
-# version = "0.1.0" # uncomment this and comment the line above if you want to manually update versions
+#dynamic = ["version"]
+version = "0.1.0" # uncomment this and comment the line above if you want to manually update versions
 description = "A package that adds values together"
 authors = [{ name = "Leah Wasser", email = "test@pyopensci.org" }]
 maintainers = [{ name = "pyopensci community", email = "test@pyopensci.org" }]
