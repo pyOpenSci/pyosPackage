@@ -2,4 +2,4 @@
 
 ## Unreleased
 
-## v0.1.0
+* Fix: Add readme and pyproject.toml file
