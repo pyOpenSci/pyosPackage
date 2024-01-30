@@ -30,5 +30,3 @@ Documentation = "https://github.com/pyopensci/pyospackage#readme"
 Issues = "https://github.com/pyopensci/pyospackage/issues"
 Source = "https://github.com/pyopensci/pyospackage"
 
-[tool]
-[tool.hatch]
