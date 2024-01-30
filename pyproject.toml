@@ -3,13 +3,31 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pyosPackage"
-#dynamic = ["version"]
-version = "0.1.4" # uncomment this and comment the line above if you want to manually update versions
+name = "pyospackage"
+description = "A package that adds numbers together"
+readme = "README.md"
+version = "0.1.0"
+requires-python = ">=3.10"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Leah Wasser", email = "leah@pyopensci.org" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+
+dependencies = []
+dynamic = ["version"]
 
 
-[project.urls] # Optional
-# "Homepage" = "https://www.pyopensci.org"
-# "Bug Reports" = "https://github.com/pyopensci/pyosPackage/issues"
-# "Source" = "https://github.com/pyopensci/pyosPackage/issues"
-#"Funding" = "" # optional
+[project.urls]
+Documentation = "https://github.com/pyopensci/pyospackage#readme"
+Issues = "https://github.com/pyopensci/pyospackage/issues"
+Source = "https://github.com/pyopensci/pyospackage"
+
+[tool]
