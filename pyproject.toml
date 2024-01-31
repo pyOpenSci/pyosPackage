@@ -24,7 +24,7 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/pypa/sampleproject"
+Homepage = "https://pypi.org/project/pyospackage/"
 Documentation = "https://github.com/pyopensci/pyospackage#readme"
 Issues = "https://github.com/pyopensci/pyospackage/issues"
 Source = "https://github.com/pyopensci/pyospackage"
