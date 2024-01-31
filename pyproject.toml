@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "pyospackage"
 description = "A package that adds numbers together"
 readme = "README.md"
-version = "0.1.8"
+version = "0.1.10"
 requires-python = ">=3.9"
 license = "MIT"
 keywords = []
