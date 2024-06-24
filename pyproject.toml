@@ -7,7 +7,7 @@ name = "pyospackage"
 description = "A package that adds numbers together"
 readme = "README.md"
 version = "0.1.10"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = "MIT"
 keywords = []
 authors = [
@@ -16,15 +16,22 @@ authors = [
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
 ]
 
 dependencies = []
 
 [project.urls]
 Homepage = "https://pypi.org/project/pyospackage/"
-Documentation = "https://github.com/pyopensci/pyospackage#readme"
+Documentation = "https://github.com/pyopensci/pyospackage"
 Issues = "https://github.com/pyopensci/pyospackage/issues"
 Source = "https://github.com/pyopensci/pyospackage"
+
+
+[tool.hatch.envs.test]
+dependencies = [
+  "pytest",
+  "pytest-cov"
+]

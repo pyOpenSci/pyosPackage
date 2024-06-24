@@ -60,5 +60,6 @@ venv.bak/
 .spyderproject
 .spyproject
 
-# mkdocs documentation
-/site
+# Vscode
+.vscode/
+*.code-workspace
