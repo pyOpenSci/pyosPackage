@@ -4,6 +4,14 @@
 
 * Fix: Drop support for python 3.9, add for 3.12 (@lwasser, #15)
 
+## 0.1.10
+
+* Initial publish to PyPI & Conda forge 
+
+## 0.1.9
+
+* Use Hatch
+
 ## 0.1.8
 
 * Fix: License should be MIT throughout
