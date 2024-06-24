@@ -4,10 +4,11 @@
 
 * Fix: Drop support for python 3.9, add for 3.12 (@lwasser, #15)
 * Add: Code of conduct to repo following contributors covenant (@lwasser, #17)
+* Add: Linting & code format using ruff / precommit (@lwasser, #19)
 
 ## 0.1.10
 
-* Initial publish to PyPI & Conda forge 
+* Initial publish to PyPI & Conda forge
 
 ## 0.1.9
 

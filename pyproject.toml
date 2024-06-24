@@ -35,3 +35,12 @@ dependencies = [
   "pytest",
   "pytest-cov"
 ]
+
+
+[tool.ruff]
+lint.select = [
+  "F", # pyflakes
+  "I", # isort
+]
+lint.ignore = ["F841"]
+line-length = 79

@@ -1,4 +1,4 @@
-# pyospackage 
+# pyospackage
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -11,7 +11,7 @@
 [![pyOpenSci](https://tinyurl.com/y22nb8up)](https://github.com/pyOpenSci/software-review/issues/115)
 
 ## What does pyospackage do?
-pyospackage is a demonstration Python package that compliments the pyOpenSci [beginner tutorial series on creating a Python package](https://www.pyopensci.org/python-package-guide/tutorials/intro.html). 
+pyospackage is a demonstration Python package that compliments the pyOpenSci [beginner tutorial series on creating a Python package](https://www.pyopensci.org/python-package-guide/tutorials/intro.html).
 
 **Table of Contents**
 
@@ -46,6 +46,23 @@ print(a)
 ```
 
 You can also add any links to this section to tutorials in your documentation.
+
+## Development
+
+* TODO: link to development docs when they exist and move the text below to the
+docs.
+
+### Linting & Code Formatting
+
+TODO: this will be added to the docs once they are created in a separate pr.
+
+All linting and code formatting is implemented in this package using a combination
+of pre-commit hooks and Ruff. Ruff is a fast, rust-based linter and code
+formatter that covers functionality previously implemented by Black and isort
+(formatters that are commonly used in the Python ecosystem). Ruff simplifies
+your linting and code format setup but running all of the checks and fixes
+using a single tool. As such pyOpenSci encourages new projects to consider
+using Ruff.
 
 ## Community
 

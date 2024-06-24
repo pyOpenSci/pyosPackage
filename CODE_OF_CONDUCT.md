@@ -6,7 +6,7 @@
 We as members, contributors, and leaders pledge to make participation in our
 community a harassment-free experience for everyone, regardless of age, body
 size, visible or invisible disability, ethnicity, sex characteristics, gender
-identity and expression, level of experience, education, socio-economic status,
+identity and expression, level of experience, education, socioeconomic status,
 nationality, personal appearance, race, caste, color, religion, or sexual
 identity and orientation.
 
@@ -60,7 +60,7 @@ representative at an online or offline event.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement using 
+reported to the community leaders responsible for enforcement using
 [this form](https://forms.gle/7MR7tCpDuprtStWP9).
 
 All complaints will be reviewed and investigated promptly and fairly.
@@ -130,5 +130,5 @@ For answers to common questions about this code of conduct, see the FAQ at
 ## pyOpenSci Code of Conduct
 
 Please note the anyone contributing to any Github repositories in the pyOpenSci
-GitHub organization must also adhere to the 
+GitHub organization must also adhere to the
 [pyOpenSci Code of Conduct](https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html).
