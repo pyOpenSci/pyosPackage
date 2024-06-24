@@ -7,7 +7,7 @@
 
 ## 0.1.10
 
-* Initial publish to PyPI & Conda forge 
+* Initial publish to PyPI & Conda forge
 
 ## 0.1.9
 

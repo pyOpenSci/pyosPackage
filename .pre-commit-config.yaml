@@ -36,10 +36,14 @@ repos:
       - id: codespell
         additional_dependencies:
           - tomli
-  
+
     # Lint code using ruff
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.3.5
     hooks:
     - id: ruff
       args: [--fix, --exit-non-zero-on-fix]
+    # Ruff can be used as a code formatter replacing black
+    # It can also replace isort
+    - id: ruff-format
+      args: ["--line-length", "79"]
