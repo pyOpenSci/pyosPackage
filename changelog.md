@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Fix: Drop support for python 3.9, add for 3.12 (@lwasser, #15)
+* Add: Code of conduct to repo following contributors covenant (@lwasser, #17)
 
 ## 0.1.10
 
