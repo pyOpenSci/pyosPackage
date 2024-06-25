@@ -42,6 +42,9 @@ dependencies = [
   "sphinx-copybutton",
   "myst-nb",
   "myst-parser",
+  "sphinx-autoapi",
+  # Autodoc2 supports myst mardown
+  #"sphinx-autodoc2"
 ]
 
 

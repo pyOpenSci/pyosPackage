@@ -36,6 +36,10 @@ release = "1.10"
 # Extensions add additional functionality to your documentation.
 # TODO: describe each extension below
 extensions = [
+    # Autodoc will create API docs for you
+    # "sphinx.ext.autodoc", # This is the older autodoc that doesn't support myst
+    "autodoc2",  # Supports myst markdown, ugly output
+    "autoapi.extension",
     "sphinx_design",
     "sphinx_copybutton",
     "sphinx.ext.intersphinx",
@@ -64,3 +68,11 @@ myst_footnote_transition = False
 
 html_theme = "pydata_sphinx_theme"
 html_static_path = ["_static"]
+
+# Autodoc
+# autodoc2_render_plugin = "myst"
+# autodoc2_packages = [
+#     "../src/pyospackage",
+# ]
+
+autoapi_dirs = ["../src/pyospackage"]

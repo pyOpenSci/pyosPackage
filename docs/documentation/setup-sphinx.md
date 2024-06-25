@@ -19,14 +19,14 @@ Below is the Sphinx-quickstart workflow used to create these docs. However,
 inevitably you will likely customize the documentation setup. So you may also
 want to just copy this repository's structure.
 
-```
+```bash
 ➜ sphinx-quickstart
 Welcome to the Sphinx 5.3.0 quickstart utility.
 
 Please enter values for the following settings (just press Enter to
 accept a default value, if one is given in brackets).
 
-Selected root path: .
+Selected root path: docs
 
 You have two options for placing the build directory for Sphinx output.
 Either, you use a directory "_build" within the root path, or you separate
@@ -47,5 +47,21 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language.
 > Project language [en]: en
 ```
 
-The `conf.py` file is the core that you use to configure your sphinx docs.
-The conf.py file in this package is setup
+## About the conf.py file
+
+The `conf.py` file is what Sphinx uses to configure your documentation. This is
+where you setup all of the features that you want your documentation to have.
+
+:::{note}
+Every tool and theme that you might use will have different configuration options
+that will be placed in the `conf.py` file.
+:::
+
+## API / Reference documentation
+
+It's useful to have a reference section in your docs that contains documentation
+for your package's methods and classes. In this demo package we are using
+autodoc2 which will create these reference docs for you automatically.
+
+We like `autodoc2` over `sphinx_autodoc` extension because it supports `myst`
+markdown.
