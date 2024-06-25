@@ -7,6 +7,7 @@
 home <self>
 hatch scripts <hatch-envs-scripts>
 Setup Sphinx <documentation/setup-sphinx>
+Reference / API <apidocs/index>
 :::
 
 :::{toctree}
