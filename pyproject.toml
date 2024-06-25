@@ -30,6 +30,30 @@ Issues = "https://github.com/pyopensci/pyospackage/issues"
 Source = "https://github.com/pyopensci/pyospackage"
 
 
+[tool.hatch.envs.docs]
+dependencies = [
+  "sphinx",
+  "sphinx-autobuild",
+  "sphinx-inline-tabs",
+  # Note that the tool you install has dashes- between the name, vs _underscores
+  # when you call the theme in sphinx's conf.py
+  "pydata-sphinx-theme",
+  "sphinx-design",
+  "sphinx-copybutton",
+  "myst-nb",
+  "myst-parser",
+]
+
+
+[tool.hatch.envs.docs.scripts]
+# Build your docs statically - html output
+# hatch run docs:docs-html
+docs-html = "sphinx-build docs/ docs/_build"
+# hatch run docs:docs-html
+docs-live = "sphinx-autobuild docs/ docs/_build"
+# TODO: add step to clean docs directory
+
+
 [tool.hatch.envs.test]
 dependencies = [
   "pytest",
