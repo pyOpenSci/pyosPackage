@@ -7,7 +7,6 @@ from datetime import datetime
 current_year = datetime.now().year
 organization_name = "pyOpenSci"
 
-
 project = "pyosPackage"
 copyright = f"{current_year}, {organization_name}"
 author = "pyOpenSci Community"
@@ -29,16 +28,11 @@ except subprocess.CalledProcessError:
 # Update the release value
 release = release_value
 
-
-release = "1.10"
-
 # -- General configuration ---------------------------------------------------
 # Extensions add additional functionality to your documentation.
 # TODO: describe each extension below
 extensions = [
-    # Autodoc will create API docs for you
-    # "sphinx.ext.autodoc", # This is the older autodoc that doesn't support myst
-    "autodoc2",  # Supports myst markdown, ugly output
+    # Autodoc will create API docs for you -
     "autoapi.extension",
     "sphinx_design",
     "sphinx_copybutton",
@@ -69,10 +63,5 @@ myst_footnote_transition = False
 html_theme = "pydata_sphinx_theme"
 html_static_path = ["_static"]
 
-# Autodoc
-# autodoc2_render_plugin = "myst"
-# autodoc2_packages = [
-#     "../src/pyospackage",
-# ]
-
-autoapi_dirs = ["../src/pyospackage"]
+# Configure autoapi
+autoapi_dirs = ["../src"]
