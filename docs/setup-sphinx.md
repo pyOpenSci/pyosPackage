@@ -57,11 +57,18 @@ Every tool and theme that you might use will have different configuration option
 that will be placed in the `conf.py` file.
 :::
 
+:::{note}
+You can remove the `make.bat` and `Makefile` files included with sphinx build.
+In this package demo we use [Hatch environments and scripts](hatch-envs-scripts).
+:::
+
 ## API / Reference documentation
 
 It's useful to have a reference section in your docs that contains documentation
 for your package's methods and classes. In this demo package we are using
-autodoc2 which will create these reference docs for you automatically.
+[`sphinx-autoapi`](https://sphinx-autoapi.readthedocs.io/en/latest/index.html)
+which will create these reference docs for you automatically. It's easy
+to setup and creates nice-looking API docs without any needed setup.
 
-We like `autodoc2` over `sphinx_autodoc` extension because it supports `myst`
-markdown.
+`Sphinx-autoapi` is also customizable if you want to display things
+differently.
