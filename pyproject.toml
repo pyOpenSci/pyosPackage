@@ -42,9 +42,8 @@ dependencies = [
   "sphinx-copybutton",
   "myst-nb",
   "myst-parser",
+  # Create beautiful api docs automatically
   "sphinx-autoapi",
-  # Autodoc2 supports myst mardown
-  #"sphinx-autodoc2"
 ]
 
 
@@ -53,6 +52,8 @@ dependencies = [
 # hatch run docs:docs-html
 docs-html = "sphinx-build docs/ docs/_build"
 # hatch run docs:docs-html
+# TODO: when i run this with hatch autobuild gets stuck in a loop of building
+# When i run it in a terminal without hatch it doesn't do that
 docs-live = "sphinx-autobuild docs/ docs/_build"
 # TODO: add step to clean docs directory
 
