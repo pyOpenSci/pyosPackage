@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Add: readthedocs config for building documentation (@lwasser)
+* Add: Cleanup documentation structure (@lwasser)
 
 ## 0.1.11
 
