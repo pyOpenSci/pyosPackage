@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.12
+
 * Add: CI based pypi release workflow & dynamic versioning (@lwasser, #32)
 * Add: readthedocs config for building documentation (@lwasser)
 * Add: Cleanup documentation structure (@lwasser)
