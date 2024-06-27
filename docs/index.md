@@ -5,9 +5,8 @@
 :hidden:
 :caption: Contents:
 
-home <self>
-Hatch Scripts <hatch-envs-scripts>
-Setup Sphinx <setup-sphinx>
+Home <self>
+Documentation <documentation/index>
 :::
 
 This documentation example uses myst as the primary documentation syntax.
@@ -27,12 +26,13 @@ This is what a sphinx directive looks like using myst markdown formatting:
 :::{toctree}
 :maxdepth: 2
 :caption: Contents:
+:::
 
 ```
 
 If you see syntax like the syntax below, you are looking at rst.
 
-```
+```rst
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
