@@ -23,15 +23,16 @@ classifiers = [
 
 dependencies = []
 
+
+
 [project.urls]
 Homepage = "https://pypi.org/project/pyospackage/"
 Documentation = "https://github.com/pyopensci/pyospackage"
 Issues = "https://github.com/pyopensci/pyospackage/issues"
 Source = "https://github.com/pyopensci/pyospackage"
 
-
-[tool.hatch.envs.docs]
-dependencies = [
+[project.optional-dependencies]
+docs = [
   "sphinx",
   "sphinx-autobuild",
   "sphinx-inline-tabs",
@@ -43,9 +44,11 @@ dependencies = [
   "myst-nb",
   "myst-parser",
   "sphinx-autoapi",
-  # Autodoc2 supports myst mardown
-  #"sphinx-autodoc2"
 ]
+
+[tool.hatch.envs.docs]
+# https://hatch.pypa.io/1.12/config/environment/overview/#features
+features = ["docs"]
 
 
 [tool.hatch.envs.docs.scripts]
