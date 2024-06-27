@@ -44,7 +44,7 @@ docs = [
   "myst-nb",
   "myst-parser",
   # Create beautiful api docs automatically
-  #"sphinx-autoapi",
+  "sphinx-autoapi",
 ]
 
 [tool.hatch.envs.docs]
