@@ -1,5 +1,15 @@
 # Sphinx documentation
 
+:::{toctree}
+:maxdepth: 2
+:hidden:
+:caption: Contents:
+:glob:
+
+*
+
+:::
+
 This package uses Sphinx to create documentation.
 
 We like sphinx because it is a community driven project with a community
