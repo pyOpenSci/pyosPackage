@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
@@ -23,8 +23,6 @@ classifiers = [
 
 dependencies = []
 
-
-
 [project.urls]
 Homepage = "https://pypi.org/project/pyospackage/"
 Documentation = "https://github.com/pyopensci/pyospackage"
@@ -46,6 +44,12 @@ docs = [
   # Create beautiful api docs automatically
   "sphinx-autoapi",
 ]
+
+# ******* Hatch configuration here ******* #
+
+[tool.hatch]
+version.source = "vcs"
+build.hooks.vcs.version-file = "src/pyosmeta/_version.py"
 
 [tool.hatch.envs.docs]
 # https://hatch.pypa.io/1.12/config/environment/overview/#features
