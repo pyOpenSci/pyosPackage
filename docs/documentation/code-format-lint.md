@@ -95,4 +95,4 @@ files every time you edit and save them.
 
 ## Spyder
 
-todo: add instructions here
+Autoformat with ruff is not yet a Spyder feature. See [this issue](https://github.com/spyder-ide/spyder/issues/21357) for discussions. 
