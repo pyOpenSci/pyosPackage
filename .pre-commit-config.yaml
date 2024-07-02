@@ -12,10 +12,12 @@
 # To run on all files: pre-commit run --all-files
 
 ci:
-  # pyosMeta disables autofixing of PRs to simplify new contributor experience and cleaner git history
+  # We prefer to disable autofixing of PRs to simplify new contributor
+  # We use the autofix as an option before we merge to run linting if a conributor
+  # doesn't setup pre-commit (which can be confusing to new contributors)
   autofix_prs: false
   # Frequency of hook updates
-  autoupdate_schedule: weekly
+  autoupdate_schedule: quarterly
 
 repos:
   # Out of the box hooks for pre-commit https://github.com/pre-commit/pre-commit-hooks
