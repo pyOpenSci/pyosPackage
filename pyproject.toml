@@ -11,18 +11,16 @@ dynamic = ["version"]
 requires-python = ">=3.10"
 license = "MIT"
 keywords = []
-authors = [
-  { name = "Leah Wasser", email = "leah@pyopensci.org" },
-]
+authors = [{ name = "Leah Wasser", email = "leah@pyopensci.org" }]
 classifiers = [
-  "Development Status :: 4 - Beta",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
 ]
 
-dependencies = []
+dependencies = ["numpy", "pandas", "altair", "vl-convert-python"]
 
 [project.urls]
 Homepage = "https://pypi.org/project/pyospackage/"
@@ -32,18 +30,18 @@ Source = "https://github.com/pyopensci/pyospackage"
 
 [project.optional-dependencies]
 docs = [
-  "sphinx",
-  "sphinx-autobuild",
-  "sphinx-inline-tabs",
-  # Note that the tool you install has dashes- between the name, vs _underscores
-  # when you call the theme in sphinx's conf.py
-  "pydata-sphinx-theme",
-  "sphinx-design",
-  "sphinx-copybutton",
-  "myst-nb",
-  "myst-parser",
-  # Create beautiful api docs automatically
-  "sphinx-autoapi",
+    "sphinx",
+    "sphinx-autobuild",
+    "sphinx-inline-tabs",
+    # Note that the tool you install has dashes- between the name, vs _underscores
+    # when you call the theme in sphinx's conf.py
+    "pydata-sphinx-theme",
+    "sphinx-design",
+    "sphinx-copybutton",
+    "myst-nb",
+    "myst-parser",
+    # Create beautiful api docs automatically
+    "sphinx-autoapi",
 ]
 
 # ******* Hatch configuration here ******* #
@@ -69,16 +67,13 @@ docs-live = "sphinx-autobuild docs/ docs/_build"
 
 
 [tool.hatch.envs.test]
-dependencies = [
-  "pytest",
-  "pytest-cov"
-]
+dependencies = ["pytest", "pytest-cov"]
 
 
 [tool.ruff]
 lint.select = [
-  "F", # pyflakes
-  "I", # isort
+    "F", # pyflakes
+    "I", # isort
 ]
 lint.ignore = ["F841"]
 line-length = 79
