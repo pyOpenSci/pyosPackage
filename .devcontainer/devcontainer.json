@@ -3,7 +3,7 @@
 {
 	"name": "Miniconda (Python 3)",
 	"image": "mcr.microsoft.com/devcontainers/miniconda:0-3",
-	
+
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/hatch:2": {}
 	},
