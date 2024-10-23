@@ -6,10 +6,10 @@
 
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/hatch:2": {},
-		"ghcr.io/devcontainers/features/python:1": {
-			"installTools": true,
-			"installJupyterlab": true,
-			"version": "3.11"
+		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
+			"installTinyTex": true,
+			"installChromium": true,
+			"version": "latest"
 		}
 	},
 	"customizations": {
