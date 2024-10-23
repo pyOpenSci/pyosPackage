@@ -7,7 +7,7 @@
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pyospackage
 )](https://pypi.org/project/pyospackage)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10594121.svg)](https://doi.org/10.5281/zenodo.10594121)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10594121.svg)](https://doi.org/10.5281/zenodo.10594120)
 
 ## What does pyospackage do?
 pyospackage is a demonstration Python package that compliments the pyOpenSci [beginner tutorial series on creating a Python package](https://www.pyopensci.org/python-package-guide/tutorials/intro.html).
