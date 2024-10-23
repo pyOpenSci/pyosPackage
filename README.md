@@ -3,7 +3,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![PyPI - Version]([https://img.shields.io/pypi/v/pyospackage](https://pypi.org/project/pyospackage/))
+[![PyPI - Version](https://img.shields.io/pypi/v/pyospackage)](https://pypi.org/project/pyospackage/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pyospackage)](https://pypi.org/project/pyospackage)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10594121.svg)](https://doi.org/10.5281/zenodo.10594120)
