@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: pyospackage
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Leah
+    family-names: Wasser
+    email: leah@pyopensci.org
+    affiliation: pyOPenSci
+    orcid: 'https://orcid.org/0000-0002-8177-6550'
+  - name: pyOpenSci
+    location: Boulder
+    region: Colorado
+    email: pyopensci@pyopensci.org
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.10594120
+    description: Citation information from Zenodo
+repository-code: 'https://www.github.com/pyopensci/pyospackage'
+url: 'https://www.pyopensci.org'
+abstract: >-
+  An example Python package used in pyOpenSci training
+  events and tutorials. 
+keywords:
+  - openscience
+  - python
+  - opensource
+  - science
+license: BSD-3-Clause
