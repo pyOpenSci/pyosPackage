@@ -33,13 +33,9 @@ consistency and catches errors early.
 
 While pre-commit is a powerful tool to add to your workflow, many do not like it:
 
-* For beginner contributors, running pre-commit hooks can be confusing. You need
-  to understand that each time you commit, it will run the checks. If it finds
-  issues in your files, it will not actually commit your files to history. This
-  can be confusing for even seasoned developers if they haven't used pre-commit
-  before.
-* Some prefer to set up autoformatters that run every time you save a file in
-  your preferred code editor (like VSCode). More on that below.
+-* For beginner contributors, running pre-commit hooks can be confusing. Each time you commit, the hooks will run checks. If issues are found in your files, they will not be committed to history. This can be confusing even for seasoned developers who are new to pre-commit. Remember, it is *your* local development environment. You are not obliged to install pre-commit hooks, and you can remove them at any time with `pre-commit uninstall`. To bypass the hooks for a single commit, you can use `git commit --no-verify`. However, skipping these hooks might require formatting your code through other means later.
+
+* Some developers prefer to set up auto-formatters that run every time you save a file in your preferred code editor (like VSCode). More on that below.
 
 ## Pre-commit.ci Bot
 
@@ -48,8 +44,8 @@ repository to run pre-commit checks in an online continuous integration pipeline
 The bot will run any pre-commit hooks that you have set up on new pull requests
 submitted to your repository.
 
-Pre-commit.ci can be a nice tool to use for pull requests if set up correctly.
-Ideally, you can set pre-commit CI to run only when you call it in a pull
+Pre-commit.ci can be a useful tool to use for pull requests if set up correctly.
+Ideally, you can set the pre-commit.CI bot to run only when you call it in a pull
 request. This way, if you have a new contributor (or a seasoned one) who doesn't
 want to set up pre-commit locally, or someone who wants to submit a pull request
 (e.g., as a first contribution!) fully from the GitHub interface, you can enable
@@ -64,7 +60,7 @@ TODO: More here on setting this up in VSCode and other tools.
 
 ## VSCode
 
-1. Make sure you have the  the Python extension for vscode installed:
+1. Make sure you have the  the Python extension for VSCode installed:
 
 1. **Install Ruff:**
    Ensure you have Ruff installed in your environment. You can install it using pip:
@@ -85,11 +81,17 @@ files every time you edit and save them.
         "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.codeActionsOnSave": {
             "source.fixAll": "always",
-            "source.organizeImports": "always",
-        },
+            "source.organizeImports": "always"
+        }
     },
-    // TODO: figure out how the formatter is selected for notebooks
     "notebook.formatOnSave.enabled": true,
+    "notebook.codeActionsOnSave": {
+        "notebook.source.fixAll": "explicit",
+        "notebook.source.organizeImports": "explicit"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    }
 }
 ```
 
