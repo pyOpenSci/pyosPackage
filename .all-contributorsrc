@@ -35,6 +35,16 @@
         "code",
         "review"
       ]
+    },
+    {
+      "login": "gpcureton",
+      "name": "Geoff Cureton",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3578659?v=4",
+      "profile": "http://cimss.ssec.wisc.edu/",
+      "contributions": [
+        "code",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
