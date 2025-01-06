@@ -22,7 +22,7 @@ repository-code: 'https://www.github.com/pyopensci/pyospackage'
 url: 'https://www.pyopensci.org'
 abstract: >-
   An example Python package used in pyOpenSci training
-  events and tutorials. 
+  events and tutorials.
 keywords:
   - openscience
   - python
