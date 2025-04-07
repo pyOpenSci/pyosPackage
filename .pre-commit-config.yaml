@@ -33,7 +33,7 @@ repos:
 
   # Spelling hook
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.3.0
+    rev: v2.4.1
     hooks:
       - id: codespell
         additional_dependencies:
@@ -41,7 +41,7 @@ repos:
 
     # Lint code using ruff
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.6
+    rev: v0.11.4
     hooks:
     - id: ruff
       args: [--fix, --exit-non-zero-on-fix]
