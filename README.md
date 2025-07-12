@@ -11,6 +11,30 @@
 ## What does pyospackage do?
 pyospackage is a demonstration Python package that compliments the pyOpenSci [beginner tutorial series on creating a Python package](https://www.pyopensci.org/python-package-guide/tutorials/intro.html).
 
+## 🔧 About This Template
+
+This package was built using [pyOpenSci’s Copier template](https://github.com/pyOpenSci/pyos-template), which helps ensure consistency, best practices, and ease of maintenance across scientific Python packages.
+
+The template includes configuration for:
+- Standard Python packaging layout
+- Code linting and formatting tools like Ruff
+- Testing setup
+- CI/CD scaffolding
+- Contribution guidelines
+
+If you're interested in using the template, check out the [Copier Template Repo](https://github.com/pyOpenSci/pyos-template).
+
+---
+
+## 📘 Learn More About Python Packaging
+
+This package accompanies our tutorials and docs on building and publishing high-quality Python packages:
+
+- 📦 **Tutorial Series:** [Beginner Python Packaging Tutorials](https://www.pyopensci.org/python-package-guide/tutorials/index.html)
+- 📖 **Overview:** [Python Packaging Overview](https://www.pyopensci.org/python-package-guide/overview.html)
+
+These resources cover everything from package layout and versioning to testing, publishing to PyPI, and creating great documentation.
+
 **Table of Contents**
 
 - [Installation](#installation)
