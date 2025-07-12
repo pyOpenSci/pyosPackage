@@ -24,11 +24,15 @@ whatever environment manager that you wish!
 
 To install the package using pip:
 
-`pip install pyospackage`
+```shell
+pip install pyospackage
+```
 
 To install the package using conda-forge:
 
-`conda install -c conda-forge pyospackage`
+```shell
+conda install -c conda-forge pyospackage
+```
 
 ## Get started using packagename
 
