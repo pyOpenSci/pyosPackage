@@ -13,18 +13,17 @@ pyospackage is a demonstration Python package that compliments the pyOpenSci [be
 
 ## 🔧 About This Template
 
-This package was built using [pyOpenSci’s Copier template](https://github.com/pyOpenSci/pyos-template), which helps ensure consistency, best practices, and ease of maintenance across scientific Python packages.
+This package was built using [pyOpenSci’s Python package Copier template](https://github.com/pyOpenSci/pyos-package-template).l This template makes it easy for anyone to quickly create a Python package following best practices developed by the pyOpenSci community.
 
 The template includes configuration for:
-- Standard Python packaging layout
-- Code linting and formatting tools like Ruff
-- Testing setup
-- CI/CD scaffolding
-- Contribution guidelines
+* [Standard Python package layout and structure](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html)
+* [Code linting and formatting tools like Ruff](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html)
+* [Setup for a test suite](https://www.pyopensci.org/python-package-guide/tests/index.html) 
+* [Basic setup for Continuous Integration and Deployment (CI/CD)](https://www.pyopensci.org/python-package-guide/continuous-integration/ci.html)
+* [Basic documentation infrastructure and files](https://www.pyopensci.org/python-package-guide/documentation/index.html) using mkdocs or sphinx
 
-If you're interested in using the template, check out the [Copier Template Repo](https://github.com/pyOpenSci/pyos-template).
+If you're interested in using the template, check out the [Copier Template Repo](https://github.com/pyOpenSci/pyos-package-template).
 
----
 
 ## 📘 Learn More About Python Packaging
 
