@@ -18,7 +18,7 @@ This package was built using [pyOpenSci’s Python package Copier template](http
 The template includes configuration for:
 * [Standard Python package layout and structure](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html)
 * [Code linting and formatting tools like Ruff](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html)
-* [Setup for a test suite](https://www.pyopensci.org/python-package-guide/tests/index.html) 
+* [Setup for a test suite](https://www.pyopensci.org/python-package-guide/tests/index.html)
 * [Basic setup for Continuous Integration and Deployment (CI/CD)](https://www.pyopensci.org/python-package-guide/continuous-integration/ci.html)
 * [Basic documentation infrastructure and files](https://www.pyopensci.org/python-package-guide/documentation/index.html) using mkdocs or sphinx
 
