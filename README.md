@@ -1,6 +1,6 @@
 # pyOpenSci Demo Python Package -- pyospackage
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![PyPI - Version](https://img.shields.io/pypi/v/pyospackage)](https://pypi.org/project/pyospackage/)
@@ -100,6 +100,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="http://cimss.ssec.wisc.edu/"><img src="https://avatars.githubusercontent.com/u/3578659?v=4?s=100" width="100px;" alt="Geoff Cureton"/><br /><sub><b>Geoff Cureton</b></sub></a><br /><a href="https://github.com/pyOpenSci/pyosPackage/commits?author=gpcureton" title="Code">💻</a> <a href="https://github.com/pyOpenSci/pyosPackage/pulls?q=is%3Apr+reviewed-by%3Agpcureton" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/steven-silvester-90318721/"><img src="https://avatars.githubusercontent.com/u/2096628?v=4?s=100" width="100px;" alt="Steven Silvester"/><br /><sub><b>Steven Silvester</b></sub></a><br /><a href="https://github.com/pyOpenSci/pyosPackage/commits?author=blink1073" title="Code">💻</a> <a href="https://github.com/pyOpenSci/pyosPackage/pulls?q=is%3Apr+reviewed-by%3Ablink1073" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jameslamb"><img src="https://avatars.githubusercontent.com/u/7608904?v=4?s=100" width="100px;" alt="James Lamb"/><br /><sub><b>James Lamb</b></sub></a><br /><a href="https://github.com/pyOpenSci/pyosPackage/commits?author=jameslamb" title="Code">💻</a> <a href="https://github.com/pyOpenSci/pyosPackage/pulls?q=is%3Apr+reviewed-by%3Ajameslamb" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/pyOpenSci/pyosPackage/commits?author=jameslamb" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/stevenrayhinojosa-gmail-com"><img src="https://avatars.githubusercontent.com/u/17886818?v=4?s=100" width="100px;" alt="steven"/><br /><sub><b>steven</b></sub></a><br /><a href="https://github.com/pyOpenSci/pyosPackage/commits?author=stevenrayhinojosa-gmail-com" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
