@@ -66,6 +66,15 @@
         "review",
         "doc"
       ]
+    },
+    {
+      "login": "stevenrayhinojosa-gmail-com",
+      "name": "steven",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17886818?v=4",
+      "profile": "https://github.com/stevenrayhinojosa-gmail-com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
