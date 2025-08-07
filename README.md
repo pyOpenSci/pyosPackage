@@ -95,13 +95,9 @@ Information here about contributing to your package. links to your code of condu
 
 ## How to cite pyospackage
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10594121.svg)](https://doi.org/10.5281/zenodo.10594121)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13983940.svg)](https://doi.org/10.5281/zenodo.13983940)
 
 To cite pyospackage please follow the citation instructions on Zenodo.
-
-```
-Leah Wasser. (2024). pyOpenSci/pyosPackage: v0.1 Test release (v0.1.0). Zenodo. https://doi.org/10.5281/zenodo.10594121
-```
 
 ## License
 
