@@ -22,7 +22,7 @@ ci:
 repos:
   # Out of the box hooks for pre-commit https://github.com/pre-commit/pre-commit-hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       # Makes sure files end in a newline and only a newline.
       - id: end-of-file-fixer
@@ -41,7 +41,7 @@ repos:
 
     # Lint code using ruff
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.2
+    rev: v0.13.3
     hooks:
     - id: ruff
       args: [--fix, --exit-non-zero-on-fix]
