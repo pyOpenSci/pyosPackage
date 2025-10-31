@@ -7,6 +7,7 @@ build:
   tools:
     python: "3.12"
   commands:
-    - pip install --upgrade pip setuptools wheel
-    - pip install hatch
-    - hatch run docs:build
+    - pip install --upgrade pip
+    - pip install -e '.[docs]'
+    # Make sure RTD can find the html output
+    - sphinx-build -b html docs $READTHEDOCS_OUTPUT/html
