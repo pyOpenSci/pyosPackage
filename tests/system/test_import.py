@@ -21,9 +21,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""
-Add a docstring here for the init module.
+"""Test that the package can be imported."""
 
-This might include a very brief description of the package,
-its purpose, and any important notes.
-"""
+
+def test_import():
+    """Test that the package can be imported."""
+    import pyospackage  # noqa: F401, PLC0415

@@ -1,22 +1,37 @@
-"""A module that performs basic math operations."""
+"""
+A module that adds numbers together.
+
+You may want to delete this module or modify it for your package.
+It's generally good practice to have a docstring
+that explains the purpose of the module, at the top.
+"""
 
 
-def add_num(
-    a: int,
-    b: int,
-) -> int:
-    """A function that adds two  numbers together
+def add_numbers(a: float, b: float) -> float:
+    """
+    Add two numbers together and return the result.
+
+    This is an example function with a numpy style docstring.
+    We recommend using this style for consistency and readability.
 
     Parameters
     ----------
-    a : int
-        The first integer to be added.
-    b : int
-        The second integer to be added.
+    a : float
+        The first number to add.
+    b : float
+        The second number to add.
 
     Returns
     -------
-    int
-        The sum of the two provided integers.
+    float
+        The sum of the two numbers.
+
+    Examples
+    --------
+    >>> add_numbers(3, 5)
+    8
+    >>> add_numbers(-2, 7)
+    5
+
     """
     return a + b
