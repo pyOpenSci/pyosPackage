@@ -15,7 +15,7 @@ jobs:
     # Environment is encouraged for increased security
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # This fetch element is only important if you are use SCM based
           # versioning (that looks at git tags to gather the version).
