@@ -7,7 +7,6 @@ updates:
       interval: monthly
     labels:
       - security
-      - dependency-update
     commit-message:
       prefix: "chore: bump GitHub Actions"
       include: "scope"

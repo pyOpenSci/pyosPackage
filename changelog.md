@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## v0.4
+
+This release fixes many issues with the original template run in "full mode"
+
+* Add: fix ci, linting, docs and tests run docs separately (@lwasser)
+* Fix readthedocs build issues fixed by updating .readthedocs.yaml to install docs dependencies and build docs directly & redundant api docs (@lwasser)
+* Add: Move to optional-dependency groups and call those groups in hatch envs (@lwasser)
+
 ## 0.1.12
 
 * Add: CI based pypi release workflow & dynamic versioning (@lwasser, #32)
