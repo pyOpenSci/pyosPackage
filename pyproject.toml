@@ -19,7 +19,7 @@ authors = [
     { name = "Leah Wasser", email = "leah@pyopensci.org" },
 ]
 license = "MIT"
-requires-python = ">= 3.10" # Adjust based on the minimum version of Python that you support
+requires-python = ">= 3.11" # Adjust based on the minimum version of Python that you support
 readme = {"file" = "README.md", "content-type" = "text/markdown"}
 # Please consult https://pypi.org/classifiers/ for a full list.
 classifiers = [
@@ -30,9 +30,9 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
     "Typing :: Typed",
 ]
-# TODO: add keywords
-keywords = []
-# TODO: add dependencies
+
+keywords = ["packaging"]
+
 dependencies = [
     "numpy>=2.2.6",
     "requests>=2.32.5",
@@ -52,6 +52,15 @@ dev = [
 ]
 tests = [
     "pytest>=8.4.2",
+]
+docs = [
+    "sphinx>=8.2.3",
+    "myst-parser>=4.0.1",
+    "pydata-sphinx-theme~=0.16",
+    "sphinx-autobuild>=2024.10.3", # Add to template
+    "sphinx-autoapi>=3.6.0", # Add to template
+    "sphinx-design>=0.6.1", # Add to template
+    "sphinx-copybutton>=0.5.2", # Add to template
 ]
 ################################################################################
 # Tool Configuration
@@ -97,10 +106,8 @@ omit = [
 # This configures the output test coverage report
 exclude_lines = ["pragma: no cover"]
 precision = 2
-
 [tool.ruff]
 line-length = 88
-extend-ignore = ["COM812"]
 
 [tool.ruff.lint]
 select = ["ALL"]
@@ -113,6 +120,7 @@ ignore = [
     "D401",  # 'First line should be in imperative mood' ignored
     "ANN001",  # Missing type annotation for {arg} in function" ignored
     "ANN201",  # 'Missing type annotation for {return}'.
+    "COM812",  # 'Missing trailing comma in collection' ignored to comply with black formatting.
 ]
 exclude = [
     "src/pyospackage/_version.py",
@@ -135,7 +143,6 @@ exclude = [
 [tool.ruff.lint.isort]
 case-sensitive = true
 known-first-party = ["src", "pyospackage"]
-lines-after-imports = 1
 
 [tool.pydoclint]
 style = "numpy"
@@ -145,16 +152,11 @@ check-return-types = false
 check-yield-types = false
 exclude = "_version.py"
 
-[dependency-groups]
-dev = [
-    "lint>=1.2.1",
-    "ruff>=0.14.3",
-]
-
 
 # Use UV to create Hatch environments
 [tool.hatch.envs.default]
 installer = "uv"
+
 ################################################################################
 # Hatch Environments
 ################################################################################
@@ -180,7 +182,6 @@ check = [
 
 #--------------- Run tests ---------------#
 
-
 [tool.hatch.envs.test]
 description = """Run the test suite."""
 extra-dependencies = [
@@ -192,7 +193,7 @@ extra-dependencies = [
 ]
 
 [[tool.hatch.envs.test.matrix]]
-python = ["3.10", "3.11", "3.12", "3.13"]
+python = ["3.11", "3.12", "3.13"]
 
 [tool.hatch.envs.test.scripts]
 run = "pytest {args:--cov=pyospackage --cov-report=term-missing}"
@@ -202,20 +203,19 @@ run = "pytest {args:--cov=pyospackage --cov-report=term-missing}"
 # This sets up a hatch environment with associated dependencies that need to be installed
 [tool.hatch.envs.docs]
 description = """Build or serve the documentation."""
-python = "3.10"
-dependencies = [
-    "pydata_sphinx_theme ~=0.16",
-    "myst-parser ~=4.0",
-    "Sphinx ~=8.0",
-    "sphinx-autobuild ==2024.10.3"
+python = "3.11"
+# Install optional dependency test for docs
+features = [
+    "docs",
 ]
 
 # This table contains the scripts that you can use to build and serve your docs
 # hatch run docs:build will build your documentation
 # hatch run docs:serve will serve them 'live' on your computer locally
 [tool.hatch.envs.docs.scripts]
-build = ["sphinx-apidoc -o docs/api src/pyospackage", "sphinx-build {args:-W -b html docs docs/_build}"]
-serve = ["sphinx-apidoc -o docs/api src/pyospackage", "sphinx-autobuild docs --watch src/pyospackage {args:-b html docs/_build/serve}"]
+build = ["sphinx-build {args:-W -b html docs docs/_build}"]
+serve = ["sphinx-autobuild docs --watch src/pyospackage {args:-b html docs/_build/serve}"]
+
 #--------------- Format & style your code ---------------#
 
 [tool.hatch.envs.style]
@@ -242,13 +242,3 @@ extra-dependencies = [
 
 [tool.hatch.envs.audit.scripts]
 check = ["pip-audit"]
-
-#--------------- Typing ---------------#
-[tool.hatch.envs.types]
-description = """Check the static types of the codebase."""
-dependencies = [
-    "mypy",
-]
-
-[tool.hatch.envs.types.scripts]
-check = "mypy src/pyospackage"

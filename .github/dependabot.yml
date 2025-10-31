@@ -1,0 +1,15 @@
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: monthly
+    labels:
+      - security
+      - dependency-update
+    commit-message:
+      prefix: "chore: bump GitHub Actions"
+      include: "scope"
+    open-pull-requests-limit: 5
+    rebase-strategy: auto
