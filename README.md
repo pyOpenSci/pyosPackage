@@ -9,6 +9,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10594121.svg)](https://doi.org/10.5281/zenodo.10594120)
 
 ## What does pyospackage do?
+
 pyospackage is a demonstration Python package that compliments the pyOpenSci [beginner tutorial series on creating a Python package](https://www.pyopensci.org/python-package-guide/tutorials/intro.html).
 
 ## 🔧 About This Template
@@ -16,6 +17,7 @@ pyospackage is a demonstration Python package that compliments the pyOpenSci [be
 This package was built using [pyOpenSci’s Python package Copier template](https://github.com/pyOpenSci/pyos-package-template).l This template makes it easy for anyone to quickly create a Python package following best practices developed by the pyOpenSci community.
 
 The template includes configuration for:
+
 * [Standard Python package layout and structure](https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html)
 * [Code linting and formatting tools like Ruff](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html)
 * [Setup for a test suite](https://www.pyopensci.org/python-package-guide/tests/index.html)
@@ -24,24 +26,18 @@ The template includes configuration for:
 
 If you're interested in using the template, check out the [Copier Template Repo](https://github.com/pyOpenSci/pyos-package-template).
 
-
 ## 📘 Learn More About Python Packaging
 
 This package accompanies our tutorials and docs on building and publishing high-quality Python packages:
 
-- 📦 **Tutorial Series:** [Beginner Python Packaging Tutorials](https://www.pyopensci.org/python-package-guide/tutorials/index.html)
-- 📖 **Overview:** [Python Packaging Overview](https://www.pyopensci.org/python-package-guide/overview.html)
+* 📦 **Tutorial Series:** [Beginner Python Packaging Tutorials](https://www.pyopensci.org/python-package-guide/tutorials/index.html)
+* 📖 **Overview:** [Python Packaging Overview](https://www.pyopensci.org/python-package-guide/overview.html)
 
 These resources cover everything from package layout and versioning to testing, publishing to PyPI, and creating great documentation.
 
-**Table of Contents**
-
-- [Installation](#installation)
-- [License](#license)
-
 ## How to install
 
-You can install this package using either pip or conda-forge. We recommend that you create a new Python
+You can install this package using either `pip`, `uv`, or `conda-forge`. We recommend that you create a new Python
 environment to work in when installing this package. Use
 whatever environment manager that you wish!
 
@@ -56,6 +52,14 @@ To install the package using conda-forge:
 ```shell
 conda install -c conda-forge pyospackage
 ```
+
+To install the package using uv:
+
+```shell
+uv pip install pyospackage
+```
+
+Or just run `uv run python` in the directory where the package lives and it will install it automatically into the chosen uv venv.
 
 ## Get started using packagename
 
@@ -74,12 +78,9 @@ You can also add any links to this section to tutorials in your documentation.
 
 ## Development
 
-* TODO: link to development docs when they exist and move the text below to the
-docs.
+Development documentation can be found in the [DEVELOPMENT.md](DEVELOPMENT.md) file.
 
 ### Linting & Code Formatting
-
-TODO: this will be added to the docs once they are created in a separate pr.
 
 All linting and code formatting is implemented in this package using a combination
 of pre-commit hooks and Ruff. Ruff is a fast, rust-based linter and code

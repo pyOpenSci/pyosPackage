@@ -1,0 +1,77 @@
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  prerequisites:
+    uses: ./.github/workflows/test.yml
+  # Setup build separate from publish for added security
+  # See https://github.com/pypa/gh-action-pypi-publish/issues/217#issuecomment-1965727093
+  build:
+    needs: [prerequisites]
+    runs-on: ubuntu-latest
+    # Environment is encouraged for increased security
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # This fetch element is only important if you are use SCM based
+          # versioning (that looks at git tags to gather the version).
+          # setuptools-scm needs tags to form a valid version number
+          fetch-tags: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          # You can modify what version of Python you want to use for your release
+          python-version: "3.11"
+
+      # Whenever possible, pin your project dependencies to a specific version
+      - name: Install Hatch
+        run: |
+          pip install hatch==1.15.1
+
+      - name: Build package using Hatch
+        run: |
+          hatch build
+          echo ""
+          echo "Generated files:"
+          ls -lh dist/
+
+      # Store an artifact of the build to use in the publish step below
+      - name: Store the distribution packages
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 #v5.0.0
+        with:
+          name: python-package-distributions
+          path: dist/
+          if-no-files-found: error
+  publish:
+    name: >-
+      Publish Python 🐍 distribution 📦 to PyPI
+    # Modify the repo name below to be your project's repo name.
+    if: github.repository_owner == "pyopensci"
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    # Environment required here for trusted publisher
+    # You can set permissions for this environment so it can only be used by
+    # certain people
+    environment:
+      name: pypi
+      # Modify the url to be the name of your package
+      url: https://pypi.org/p/pyospackage
+    permissions:
+      id-token: write  # this permission is mandatory for PyPI publishing
+    steps:
+      - name: Download dists
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 #v6.0.0
+        with:
+          name: python-package-distributions
+          path: dist/
+          merge-multiple: true
+      - name: Publish package to PyPI
+        # Only publish to real PyPI on release
+        if: github.event_name == 'release' && github.event.action == 'published'
+        uses: pypa/gh-action-pypi-publish@release/ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # v1.13.0

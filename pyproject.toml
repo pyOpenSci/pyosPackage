@@ -1,84 +1,264 @@
+################################################################################
+# Build Configuration
+################################################################################
+
 [build-system]
-requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
+requires = ["hatchling", "hatch-vcs"]
+
+################################################################################
+# Project Configuration
+################################################################################
 
 [project]
 name = "pyospackage"
-description = "A package that adds numbers together"
-readme = "README.md"
-# version = "0.1.11" # Delete this line and add the line below to tell hatch to use dynamic versioning
+# You can chose to use dynamic versioning with hatch or static where you add it manually.
 dynamic = ["version"]
-requires-python = ">=3.10"
-license = "MIT"
-keywords = []
+description = "A package that adds numbers together."
 authors = [
-  { name = "Leah Wasser", email = "leah@pyopensci.org" },
+    { name = "Leah Wasser", email = "leah@pyopensci.org" },
 ]
+license = "MIT"
+requires-python = ">= 3.10" # Adjust based on the minimum version of Python that you support
+readme = {"file" = "README.md", "content-type" = "text/markdown"}
+# Please consult https://pypi.org/classifiers/ for a full list.
 classifiers = [
-  "Development Status :: 4 - Beta",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Typing :: Typed",
 ]
-
-dependencies = []
+# TODO: add keywords
+keywords = []
+# TODO: add dependencies
+dependencies = [
+    "numpy>=2.2.6",
+    "requests>=2.32.5",
+]
 
 [project.urls]
-Homepage = "https://pypi.org/project/pyospackage/"
-Documentation = "https://pyospackage.readthedocs.io/en/latest/"
-Issues = "https://github.com/pyopensci/pyospackage/issues"
-Source = "https://github.com/pyopensci/pyospackage"
+Homepage = "https://github.com/pyopensci/pyospackage"
+"Source Code" = "https://github.com/pyopensci/pyospackage"
+"Bug Tracker" = "https://github.com/pyopensci/pyospackage/issues"
+Documentation = "https://pyospackage.readthedocs.io"
+Download = "https://pypi.org/project/pyospackage/#files"
 
 [project.optional-dependencies]
-docs = [
-  "sphinx",
-  "sphinx-autobuild",
-  "sphinx-inline-tabs",
-  # Note that the tool you install has dashes- between the name, vs _underscores
-  # when you call the theme in sphinx's conf.py
-  "pydata-sphinx-theme",
-  "sphinx-design",
-  "sphinx-copybutton",
-  "myst-nb",
-  "myst-parser",
-  # Create beautiful api docs automatically
-  "sphinx-autoapi",
+dev = [
+    "pre-commit",
+    "ruff>=0.14.3",
+]
+tests = [
+    "pytest>=8.4.2",
+]
+################################################################################
+# Tool Configuration
+################################################################################
+
+# Hatch is building your package's wheel and sdist
+# This tells hatch to only include Python packages (i.e., folders with __init__.py) in the build.
+# read more about package building, here:
+# https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-distribution-files-sdist-wheel.html
+[tool.hatch.build]
+only-packages = true
+
+# This tells Hatch to build the package from the src/me directory.
+# Read more about src layouts here: https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html
+[tool.hatch.build.targets.wheel]
+packages = ["src/pyospackage"]
+[tool.hatch.build.hooks.vcs]
+version-file = "src/pyospackage/_version.py"
+
+[tool.hatch.version]
+source = "vcs"
+
+######## Configure pytest for your test suite ########
+[tool.pytest.ini_options]
+testpaths = ["tests"] # Tells pytest what directory tests are in
+markers = ["raises"] # Tells pytest to not raise a warning if you use @pytest.mark.raises
+
+[tool.coverage.paths]
+source = [
+    "src/pyospackage",
+    "*/site-packages/pyospackage",
 ]
 
-# ******* Hatch configuration here ******* #
+[tool.coverage.run]
+# Ensures code coverage is measured for branches (conditional statements with different outcomes) in your code.
+branch = true
+parallel = true
+omit = [
+    "src/pyospackage/_version.py",
+]
 
-# Setup dynamic versioning (this uses setuptools_scm on the backend)
-[tool.hatch]
-version.source = "vcs"
-build.hooks.vcs.version-file = "src/pyospackage/_version.py"
+[tool.coverage.report]
+# This configures the output test coverage report
+exclude_lines = ["pragma: no cover"]
+precision = 2
+[tool.ruff]
+line-length = 88
 
-[tool.hatch.envs.docs]
-# https://hatch.pypa.io/1.12/config/environment/overview/#features
-features = ["docs"]
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D107",  # 'Missing docstring in __init__' ignored because pydoclint wants us to document the class instead.
+    "D203",  # '1 blank line required before class docstring' ignored because we want no blank line.
+    "D212",  # 'Multi-line docstring summary should start at the first line' ignored because we want the summary to start on the second line.
+    "D407",  # 'Missing dashed underline after section' ignored because Google style docstrings don't underline.
+    "ANN101",  # 'Missing type annotation for {self} in method'.
+    "ANN102",  # 'Missing type annotation for {cls} in classmethod'.
+    "D413",  # 'Missing blank line after section' ignored .
+    "D401",  # 'First line should be in imperative mood' ignored
+    "ANN001",  # Missing type annotation for {arg} in function" ignored
+    "ANN201",  # 'Missing type annotation for {return}'.
+]
+exclude = [
+    "src/pyospackage/_version.py",
+    "docs/conf.py",
+]
 
-[tool.hatch.envs.docs.scripts]
-# Build your docs statically - html output
-# hatch run docs:docs-html
-docs-html = "sphinx-build docs/ docs/_build"
-# hatch run docs:docs-html
-# TODO: when i run this with hatch autobuild gets stuck in a loop of building
-# When i run it in a terminal without hatch it doesn't do that
-docs-live = "sphinx-autobuild docs/ docs/_build"
-# TODO: add step to clean docs directory
+[tool.ruff.lint.extend-per-file-ignores]
+"__init__.py" = [
+    "E401",  # 'Multiple imports on one line'
+    "E402",  # 'Module level import not at top of file'
+    "F401",  # 'Imported but unused'
+    "I001",  # 'Import block is un-sorted or un-formatted' ignored because we may have to import in a particular, not-alphabetical order.
+]
+"tests/**/*.py" = [
+    "S101",  # 'Use of assert detected' ignored because we are using pytest.
+    "INP001",  # 'Insecure input' ignored because we are testing.
+    "ANN201",  # 'Missing type annotation for {return}' ignored because all tests return `None`.
+]
+
+[tool.ruff.lint.isort]
+case-sensitive = true
+known-first-party = ["src", "pyospackage"]
+lines-after-imports = 1
+
+[tool.pydoclint]
+style = "numpy"
+arg-type-hints-in-signature = true
+arg-type-hints-in-docstring = true
+check-return-types = false
+check-yield-types = false
+exclude = "_version.py"
+# TODO: Adjust mypy configuration.
+#[tool.mypy]
+#plugins = [
+#    "pydantic.mypy",
+#]
+
+# Stop mypy from complaining about missing types from imports.
+#[[tool.mypy.overrides]]
+#module = [
+#    "pandas",
+#]
+#ignore_missing_imports = true
+
+#[tool.pydantic-mypy]
+#init_forbid_extra = true
+#init_typed = true
+#warn_required_dynamic_aliases = true
+
+# Use UV to create Hatch environments
+[tool.hatch.envs.default]
+installer = "uv"
+################################################################################
+# Hatch Environments
+################################################################################
+
+#--------------- Build and check your package ---------------#
+
+# This table installs the tools you need to test and build your package
+[tool.hatch.envs.build]
+description = """Test the installation the package."""
+dependencies = [
+    "pip",
+    "twine",
+]
+detached = true
+
+# This table installs created the command hatch run install:check which will build and check your package.
+[tool.hatch.envs.build.scripts]
+check = [
+    "pip check",
+    "hatch build {args:--clean}",
+    "twine check dist/*",
+]
+
+#--------------- Run tests ---------------#
 
 
 [tool.hatch.envs.test]
+description = """Run the test suite."""
+extra-dependencies = [
+    "pytest",
+    "pytest-cov",
+    "pytest-raises",
+    "pytest-randomly",
+    "pytest-xdist",
+]
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.10", "3.11", "3.12", "3.13"]
+
+[tool.hatch.envs.test.scripts]
+run = "pytest {args:--cov=pyospackage --cov-report=term-missing}"
+
+#--------------- Build and preview your documentation ---------------#
+
+# This sets up a hatch environment with associated dependencies that need to be installed
+[tool.hatch.envs.docs]
+description = """Build or serve the documentation."""
+python = "3.10"
 dependencies = [
-  "pytest",
-  "pytest-cov"
+    "pydata_sphinx_theme ~=0.16",
+    "myst-parser ~=4.0",
+    "Sphinx ~=8.0",
+    "sphinx-autobuild ==2024.10.3"
 ]
 
+# This table contains the scripts that you can use to build and serve your docs
+# hatch run docs:build will build your documentation
+# hatch run docs:serve will serve them 'live' on your computer locally
+[tool.hatch.envs.docs.scripts]
+build = ["sphinx-apidoc -o docs/api src/pyospackage", "sphinx-build {args:-W -b html docs docs/_build}"]
+serve = ["sphinx-apidoc -o docs/api src/pyospackage", "sphinx-autobuild docs --watch src/pyospackage {args:-b html docs/_build/serve}"]
+#--------------- Format & style your code ---------------#
 
-[tool.ruff]
-lint.select = [
-  "F", # pyflakes
-  "I", # isort
+[tool.hatch.envs.style]
+description = """Check the style of the codebase."""
+dependencies = [
+    "pydoclint",
+    "ruff",
 ]
-lint.ignore = ["F841"]
-line-length = 79
+detached = true
+
+[tool.hatch.envs.style.scripts]
+docstrings = "pydoclint src/ tests/"
+code = "ruff check {args}"
+format = "ruff format {args}"
+check = ["docstrings", "code"]
+
+#--------------- Check security for your dependencies ---------------#
+
+[tool.hatch.envs.audit]
+description = """Check dependencies for security vulnerabilities."""
+extra-dependencies = [
+    "pip-audit",
+]
+
+[tool.hatch.envs.audit.scripts]
+check = ["pip-audit"]
+
+#--------------- Typing ---------------#
+[tool.hatch.envs.types]
+description = """Check the static types of the codebase."""
+dependencies = [
+    "mypy",
+]
+
+[tool.hatch.envs.types.scripts]
+check = "mypy src/pyospackage"

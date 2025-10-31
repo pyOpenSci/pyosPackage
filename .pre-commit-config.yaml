@@ -13,7 +13,7 @@
 
 ci:
   # We prefer to disable autofixing of PRs to simplify new contributor
-  # We use the autofix as an option before we merge to run linting if a conributor
+  # We use the autofix as an option before we merge to run linting if a contributor
   # doesn't setup pre-commit (which can be confusing to new contributors)
   autofix_prs: false
   # Frequency of hook updates
@@ -41,7 +41,7 @@ repos:
 
     # Lint code using ruff
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.13.3
+    rev: v0.14.3
     hooks:
     - id: ruff
       args: [--fix, --exit-non-zero-on-fix]
