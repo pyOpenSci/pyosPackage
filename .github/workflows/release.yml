@@ -23,7 +23,7 @@ jobs:
           fetch-tags: true
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           # You can modify what version of Python you want to use for your release
           python-version: "3.11"
