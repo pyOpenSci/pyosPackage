@@ -1,39 +1,29 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/miniconda
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Miniconda (Python 3)",
-	"image": "mcr.microsoft.com/devcontainers/miniconda:0-3",
-
+	"name": "Python 3",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/python:3.12",
 	"features": {
-		"ghcr.io/devcontainers-contrib/features/hatch:2": {},
-		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
-			"installTinyTex": true,
-			"installChromium": true,
-			"version": "latest"
-		}
+		"ghcr.io/devcontainers-extra/features/copier:7.0.15": {
+			"version": "9.10.2"
+		},
+		"ghcr.io/devcontainers-extra/features/hatch:2.0.18": {
+			"version": "1.14.2"
+		},
+		"ghcr.io/devcontainers-extra/features/pre-commit:2.0.18": {
+			"version": "4.3.0"
+		},
+		"ghcr.io/devcontainers-extra/features/black:2.0.18": {
+			"version": "25.9.0"
+		},
+		"ghcr.io/devcontainers-extra/features/isort:2.0.18": {
+			"version": "6.0.1"
+		},
+		"ghcr.io/va-h/devcontainers-features/uv:1": {
+			"version": "0.8.22"
+		},
 	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"njpwerner.autodocstring",
-				"ms-python.python"
-			],
-			"settings": {
-				"autoDocstring.docstringFormat": "numpy"
-			}
-		}
-	}
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "python --version",
-
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
-}
+	"extensions": [
+		"ms-vscode.live-server",
+	]
