@@ -6,6 +6,7 @@
 
 This release fixes many issues with the original template run in "full mode"
 
+* Fix: release.yml broken and combine publish and release builds (@lwasser, #71)
 * Add: fix ci, linting, docs and tests run docs separately (@lwasser)
 * Fix readthedocs build issues fixed by updating .readthedocs.yaml to install docs dependencies and build docs directly & redundant api docs (@lwasser)
 * Add: Move to optional-dependency groups and call those groups in hatch envs (@lwasser)

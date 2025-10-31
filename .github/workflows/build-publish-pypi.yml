@@ -39,7 +39,7 @@ jobs:
 
       - name: Build package using Hatch
         run: |
-          hatch build
+          hatch run build:check
           echo ""
           echo "Generated files:"
           ls -lh dist/
@@ -49,10 +49,13 @@ jobs:
         with:
           name: python-package-distributions
           path: dist/
+  # The publish step will only run on a release from the pyopensci repository
+  # There are several checks in place including setting up the pypi environment in
+  # GitHub so that only people on your maintainer team can allow the deployment
   publish:
     name: >-
       Publish Python 🐍 distribution 📦 to PyPI
-    if: github.repository_owner == 'pyopensci'
+    if: github.repository_owner == 'pyopensci' && github.event_name == 'release'
     needs:
       - build
     runs-on: ubuntu-latest
