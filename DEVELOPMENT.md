@@ -101,7 +101,7 @@ python = ["3.10", "3.11", "3.12", "3.13"]
 If you run `hatch shell test`, you will see the output below. To enter an environment with a matrix attached to it, you need to pick the Python environment version that you want to open.
 
 ```console
-$ hatch shell test                           
+$ hatch shell test
 Environment `test` defines a matrix, choose one of the following instead:
 
 test.py3.10
@@ -152,7 +152,7 @@ rootdir: /workspaces/pyopensci-scipy25-create-python-package
 configfile: pyproject.toml
 testpaths: tests
 plugins: xdist-3.8.0, randomly-3.16.0, raises-0.11, cov-6.2.1
-collected 2 items                                                                                                                                           
+collected 2 items
 
 tests/system/test_import.py .                                                                                                                         [ 50%]
 tests/unit/test_example.py .                                                                                                                          [100%]
@@ -175,7 +175,7 @@ rootdir: /workspaces/pyopensci-scipy25-create-python-package
 configfile: pyproject.toml
 testpaths: tests
 plugins: xdist-3.8.0, randomly-3.16.0, raises-0.11, cov-6.2.1
-collected 2 items                                                                                                                                           
+collected 2 items
 
 tests/system/test_import.py .                                                                                                                         [ 50%]
 tests/unit/test_example.py .                                                                                                                          [100%]
@@ -194,7 +194,7 @@ TOTAL                              2      0      0      0  100.00%
 
 ## Build your package
 
-You can build your package using the environment and scripts defined in the `build` tables:  
+You can build your package using the environment and scripts defined in the `build` tables:
 
 `hatch run build:check`
 
@@ -225,6 +225,6 @@ check = [
 This uses the above environment and tells hatch to run
 
 * `pip check`,  # verifies your dependencies
-* `hatch build --clean`  
+* `hatch build --clean`
 * `twine check dist/*` # this checks your distribution for metadata and other potential issues.
-to build and test your package.  
+to build and test your package.

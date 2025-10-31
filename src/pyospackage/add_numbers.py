@@ -5,7 +5,7 @@ def add_num(
     a: int,
     b: int,
 ) -> int:
-    """A function that adds two  numbers together
+    """A function that adds two  numbers together.
 
     Parameters
     ----------

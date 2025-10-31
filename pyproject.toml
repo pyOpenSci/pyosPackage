@@ -97,8 +97,10 @@ omit = [
 # This configures the output test coverage report
 exclude_lines = ["pragma: no cover"]
 precision = 2
+
 [tool.ruff]
 line-length = 88
+extend-ignore = ["COM812"]
 
 [tool.ruff.lint]
 select = ["ALL"]
@@ -107,8 +109,6 @@ ignore = [
     "D203",  # '1 blank line required before class docstring' ignored because we want no blank line.
     "D212",  # 'Multi-line docstring summary should start at the first line' ignored because we want the summary to start on the second line.
     "D407",  # 'Missing dashed underline after section' ignored because Google style docstrings don't underline.
-    "ANN101",  # 'Missing type annotation for {self} in method'.
-    "ANN102",  # 'Missing type annotation for {cls} in classmethod'.
     "D413",  # 'Missing blank line after section' ignored .
     "D401",  # 'First line should be in imperative mood' ignored
     "ANN001",  # Missing type annotation for {arg} in function" ignored
@@ -144,23 +144,13 @@ arg-type-hints-in-docstring = true
 check-return-types = false
 check-yield-types = false
 exclude = "_version.py"
-# TODO: Adjust mypy configuration.
-#[tool.mypy]
-#plugins = [
-#    "pydantic.mypy",
-#]
 
-# Stop mypy from complaining about missing types from imports.
-#[[tool.mypy.overrides]]
-#module = [
-#    "pandas",
-#]
-#ignore_missing_imports = true
+[dependency-groups]
+dev = [
+    "lint>=1.2.1",
+    "ruff>=0.14.3",
+]
 
-#[tool.pydantic-mypy]
-#init_forbid_extra = true
-#init_typed = true
-#warn_required_dynamic_aliases = true
 
 # Use UV to create Hatch environments
 [tool.hatch.envs.default]

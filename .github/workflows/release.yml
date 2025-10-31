@@ -28,7 +28,7 @@ jobs:
           # You can modify what version of Python you want to use for your release
           python-version: "3.11"
 
-      # Whenever possible, pin your project dependencies to a specific version
+      # Whenever possible, pin your project development dependencies to a specific version
       - name: Install Hatch
         run: |
           pip install hatch==1.15.1
