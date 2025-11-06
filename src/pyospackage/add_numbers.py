@@ -9,7 +9,7 @@ that explains the purpose of the module, at the top.
 
 def add_numbers(a: float, b: float) -> float:
     """
-    Add two numbers together and return the result.
+    Add two numbers together and return the result value.
 
     This is an example function with a numpy style docstring.
     We recommend using this style for consistency and readability.
