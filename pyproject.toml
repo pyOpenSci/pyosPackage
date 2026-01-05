@@ -164,6 +164,7 @@ installer = "uv"
 #--------------- Build and check your package ---------------#
 
 # This table installs the tools you need to test and build your package
+# `builder = true` needed since hatch 1.16: https://github.com/pypa/hatch/issues/2113
 [tool.hatch.envs.build]
 description = """Test the installation the package."""
 dependencies = [
@@ -171,6 +172,7 @@ dependencies = [
     "twine",
 ]
 detached = true
+builder = true
 
 # This table installs created the command hatch run install:check which will build and check your package.
 [tool.hatch.envs.build.scripts]
