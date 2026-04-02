@@ -27,7 +27,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install Hatch
         run: |
-          pip install hatch==1.15.1
+          pip install hatch
 
       - name: Build documentation
         run: hatch run docs:build
